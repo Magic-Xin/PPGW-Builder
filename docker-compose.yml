@@ -4,6 +4,7 @@ services:
   paopaodns:
     image: sliamb/paopaodns:latest
     container_name: PaoPaoDNS
+    network_mode: "host"
     restart: always
     volumes:
       - /home/paopaodns:/data
