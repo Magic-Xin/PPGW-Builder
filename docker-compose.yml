@@ -16,7 +16,7 @@ services:
       - CNFALL=yes
       - CN_TRACKER=yes
       - USE_HOSTS=no
-      - IPV6=only6
+      - IPV6=yes
       - CUSTOM_FORWARD=192.168.100.3:53
       - AUTO_FORWARD=yes
       - AUTO_FORWARD_CHECK=yes
