@@ -36,10 +36,10 @@ jobs:
         tar xf upx-4.2.4-amd64_linux.tar.xz
         echo "upx=../upx-4.2.4-amd64_linux/upx" >> $GITHUB_ENV
 
-    - name: Download Files
-      run: |
-        curl -O ${{ secrets.PPGW }}
-        # curl -O https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/Country.mmdb
+    # - name: Download Files
+    #   run: |
+    #     curl -O ${{ secrets.PPGW }}
+    #     curl -O https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/Country.mmdb
 
     - name: Build Mihomo
       run: |
