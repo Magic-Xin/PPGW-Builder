@@ -43,13 +43,13 @@ jobs:
 
     - name: Build Mihomo
       env:
-        GOBUILD: CGO_ENABLED=0 go build -tags with_gvisor -trimpath -ldflags '-w -s -buildid='
+        GOBUILD: "go build -tags with_gvisor -trimpath -ldflags '-w -s -buildid='"
         BINDIR: bin
       run: |
         git clone -b Alpha https://github.com/MetaCubeX/mihomo
         cd mihomo
         mkdir ${BINDIR}
-        GOARCH=${CLASH_ARCH} GOOS=linux ${GOBUILD} -o ${BINDIR}/clash
+        CGO_ENABLED=0 GOARCH=${CLASH_ARCH} GOOS=linux ${GOBUILD} -o ${BINDIR}/clash
         cp ${BINDIR}/clash ../clash
       
     - name: Build PaoPaoGateWay
