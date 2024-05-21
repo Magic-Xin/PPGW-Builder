@@ -22,6 +22,8 @@ services:
       - AUTO_FORWARD_CHECK=yes
       - USE_MARK_DATA=yes
       - HTTP_FILE=yes
+      - ADDINFO=yes
+      - SHUFFLE=trun
     ports:
       - "53:53/udp"
       - "53:53/tcp"
