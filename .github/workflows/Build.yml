@@ -43,7 +43,7 @@ jobs:
 
     - name: Build Mihomo
       env:
-        GOBUILD: "go build -tags with_gvisor -trimpath -ldflags '-w -s -buildid='"
+        GOBUILD: go build -tags with_gvisor -trimpath -ldflags="-w -s -buildid="
         BINDIR: bin
       run: |
         git clone -b Alpha https://github.com/MetaCubeX/mihomo
