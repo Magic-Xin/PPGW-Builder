@@ -39,7 +39,7 @@ jobs:
       if: ${{  success() }}
       uses: actions/upload-artifact@main
       with:
-        name: paopao-gateway.iso
+        name: paopao-gateway
         path: |
           *.iso
       
