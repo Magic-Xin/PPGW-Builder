@@ -42,15 +42,12 @@ jobs:
         curl -O https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/Country.mmdb
 
     - name: Build Mihomo
-      env:
-        GOBUILD: go build -tags with_gvisor -trimpath -ldflags='-w -s -buildid='
-        BINDIR: bin
       run: |
         git clone -b Alpha https://github.com/MetaCubeX/mihomo
         cd mihomo
-        mkdir ${BINDIR}
-        CGO_ENABLED=0 GOARCH=${CLASH_ARCH} GOOS=linux ${GOBUILD} -o ${BINDIR}/clash
-        cp ${BINDIR}/clash ../clash
+        mkdir bin
+        CGO_ENABLED=0 GOARCH=${CLASH_ARCH} GOOS=linux go build -tags with_gvisor -trimpath -ldflags="-w -s -buildid=" -o bin/clash
+        cp bin/clash ../clash
       
     - name: Build PaoPaoGateWay
       run: |
