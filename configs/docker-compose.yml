@@ -25,6 +25,7 @@ services:
       - HTTP_FILE=yes
       - ADDINFO=yes
       - SHUFFLE=trnc
+      - EXPIRED_FLUSH=yes
       - SOCKS5=192.168.100.3.1080
       - SERVER_IP=192.168.100.4
     ports:
