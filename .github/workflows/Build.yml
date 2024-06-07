@@ -40,14 +40,13 @@ jobs:
         tar xf upx-4.2.4-amd64_linux.tar.xz
         echo "upx=$(pwd)/upx-4.2.4-amd64_linux/upx" >> $GITHUB_ENV
 
-    # - name: Download Files
-    #   run: |
-    #     curl -O ${{ secrets.PPGW }}
-    #     curl -O https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/Country.mmdb
+    - name: Download Files
+      run: |
+        # curl -O ${{ secrets.PPGW }}
+        curl -O https://raw.githubusercontent.com/alecthw/mmdb_china_ip_list/release/Country.mmdb
 
     - name: Build Mihomo
       run: |
-        ls -lf
         cd mihomo
         mkdir bin
         CGO_ENABLED=0 GOARCH=${CLASH_ARCH} GOOS=linux go build -tags with_gvisor -trimpath -ldflags="-w -s -buildid=" -o bin/clash
