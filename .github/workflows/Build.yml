@@ -50,6 +50,7 @@ jobs:
         cd mihomo
         mkdir bin
         CGO_ENABLED=0 GOARCH=${CLASH_ARCH} GOOS=linux go build -tags with_gvisor -trimpath -ldflags="-w -s -buildid=" -o bin/clash
+        ${{ env.upx }} --lzma --best bin/clash
         cp bin/clash ../clash
       
     - name: Build PaoPaoGateWay
