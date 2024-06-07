@@ -2,8 +2,8 @@ name: Build
 
 on:
   workflow_dispatch:
-  schedule:
-    - cron: 0 19 * * 1
+  # schedule:
+  #   - cron: 0 19 * * 1
 
 env:
   CLASH_ARCH: amd64
