@@ -11,7 +11,7 @@ services:
     environment:
       - TZ=Asia/Shanghai
       - UPDATE=weekly
-      - DNS_SERVERNAME=PaoPaoDNS,blog.03k.org
+      - DNS_SERVERNAME=PaoPaoDNS
       - DNSPORT=53
       - CNAUTO=yes
       - CNFALL=yes
@@ -24,9 +24,9 @@ services:
       - USE_MARK_DATA=yes
       - HTTP_FILE=yes
       - ADDINFO=yes
-      - SHUFFLE=trnc
+      - SHUFFLE=yes
       - EXPIRED_FLUSH=yes
-      - SOCKS5=192.168.100.3.1080
+      - SOCKS5=192.168.100.3:1080
       - SERVER_IP=192.168.100.4
     ports:
       - "53:53/udp"
